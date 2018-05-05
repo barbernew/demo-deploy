@@ -2,6 +2,7 @@
   "name": "demo-deploy",
   "version": "0.0.0",
   "license": "MIT",
+  "postinstall": "ng build --aot -prod",
   "scripts": {
     "ng": "ng",
     "start": "node server.js",
@@ -14,6 +15,8 @@
   "dependencies": {
     "@angular/animations": "^4.2.4",
     "@angular/common": "^4.2.4",
+    "@angular/cli": "1.4.9",
+    "@angular/compiler-cli": "^4.4.6",
     "@angular/compiler": "^4.2.4",
     "@angular/core": "^4.2.4",
     "@angular/forms": "^4.2.4",
