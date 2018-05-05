@@ -11,7 +11,7 @@ import {HttpModule} from '@angular/http';
 import {HttpClientModule} from '@angular/common/http';
 // import {AuthorizationService} from "../../services/authefication.service";
 import {AppRoutingModule} from "../../app/app-routing.module";
-import {NgxCarouselModule} from 'ngx-carousel';
+//import {NgxCarouselModule} from 'ngx-carousel';
 import 'hammerjs';
 
 @NgModule({
