@@ -2,14 +2,14 @@
   "name": "demo-deploy",
   "version": "0.0.0",
   "license": "MIT",
-  "postinstall": "ng build --aot -prod",
   "scripts": {
     "ng": "ng",
     "start": "node server.js",
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
-    "e2e": "ng e2e"
+    "e2e": "ng e2e",
+    "postinstall": "ng build --aot -prod",
   },
   "private": true,
   "dependencies": {
