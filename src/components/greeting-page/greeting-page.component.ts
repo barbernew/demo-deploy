@@ -4,7 +4,7 @@ import { BsModalRef, BsModalService } from 'ngx-bootstrap';
 // import {HashService} from "../../services/hash.service";
 // import {HttpService} from "../../services/http.service";
 // import {AuthorizationService} from "../../services/authefication.service";
-import {NgxCarousel} from 'ngx-carousel';
+// import {NgxCarousel} from 'ngx-carousel';
 
 @Component({
   selector: 'greeting-page',
@@ -27,49 +27,49 @@ export class GreetingPageComponent implements AfterViewInit, OnInit {
   @ViewChildren('range') range: QueryList<any>;
   @ViewChildren('header') header: QueryList<any>;
 
-  public carouselTile: NgxCarousel;
+  // public carouselTile: NgxCarousel;
 
   constructor(private modalService: BsModalService) {
   }
 
   ngOnInit() {
-    this.carouselTile = {
-      grid: {xs: 1, sm: 2, md: 3, lg: 5, all: 0},
-      slide: 5,
-      speed: 400,
-      interval: 5000,
-      animation: 'lazy',
-      point: {
-        visible: true,
-        pointStyles: `
-          .ngxcarouselPoint {
-            list-style-type: none;
-            text-align: center;
-            padding: 12px;
-            margin: 0;
-            white-space: nowrap;
-            overflow: auto;
-            box-sizing: border-box;
-          }
-          .ngxcarouselPoint li {
-            border-radius: 50%;
-            border: solid rgb(61, 62, 78) 1px;
-            background-color: #fff;
-            display: inline-block;
-            padding: 4px;
-            margin: 0 3px;
-            transition-timing-function: cubic-bezier(.17, .67, .83, .67);
-            transition: .4s;
-          }
-          .ngxcarouselPoint li.active {
-              background-color: #1198e6;
-              transform: scale(1.2);
-          }`
-      },
-      load: 2,
-      loop: true,
-      touch: true,
-    }
+    // this.carouselTile = {
+    //   grid: {xs: 1, sm: 2, md: 3, lg: 5, all: 0},
+    //   slide: 5,
+    //   speed: 400,
+    //   interval: 5000,
+    //   animation: 'lazy',
+    //   point: {
+    //     visible: true,
+    //     pointStyles: `
+    //       .ngxcarouselPoint {
+    //         list-style-type: none;
+    //         text-align: center;
+    //         padding: 12px;
+    //         margin: 0;
+    //         white-space: nowrap;
+    //         overflow: auto;
+    //         box-sizing: border-box;
+    //       }
+    //       .ngxcarouselPoint li {
+    //         border-radius: 50%;
+    //         border: solid rgb(61, 62, 78) 1px;
+    //         background-color: #fff;
+    //         display: inline-block;
+    //         padding: 4px;
+    //         margin: 0 3px;
+    //         transition-timing-function: cubic-bezier(.17, .67, .83, .67);
+    //         transition: .4s;
+    //       }
+    //       .ngxcarouselPoint li.active {
+    //           background-color: #1198e6;
+    //           transform: scale(1.2);
+    //       }`
+    //   },
+    //   load: 2,
+    //   loop: true,
+    //   touch: true,
+    // }
   }
 
   ngAfterViewInit() {

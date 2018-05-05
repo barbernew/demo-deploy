@@ -30,7 +30,7 @@ import 'hammerjs';
     ModalModule.forRoot(),
     CarouselModule.forRoot(),
     AlertModule.forRoot(),
-    NgxCarouselModule,
+    // NgxCarouselModule,
   ],
   providers: [],
   bootstrap: [GreetingPageComponent]
