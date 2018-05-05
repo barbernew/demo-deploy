@@ -1,0 +1,543 @@
+<body>
+<div class="wrapper">
+  <div class="content-block">
+    <alert class="alertAuthefication" *ngIf="checkAuthefication()" [type]="'danger'" [dismissOnTimeout]="5000"
+           [dismissible]="true" (onClose)="closeAlert()">Stop! To see this page you should be auth. Log in , please.
+    </alert>
+    <alert class="alertAuthefication" *ngIf="checkLogin()" [type]="'danger'" [dismissOnTimeout]="5000"
+           [dismissible]="true" (onClose)="closeAlert()">Your login or password isn't correct!
+    </alert>
+    <alert class="alertAuthefication" *ngIf="checkRegistration()" [type]="'danger'" [dismissOnTimeout]="5000"
+           [dismissible]="true" (onClose)="closeAlert()">This login is already taken!Just create another!
+    </alert>
+    <header id="header" #header>
+      <div class="header-container">
+        <a class="header-logo">
+          <img id="header-img" src="../../assets/images/logos/header-logo.png"
+               alt="header-logo">
+        </a>
+        <nav class="header-nav">
+          <input type="checkbox" id="btn-menu"/>
+          <label for="btn-menu"></label>
+          <ul class="header-nav-ul">
+            <li>
+              <a class="a-home" scrollTo="home"
+                 duration="3000"
+                 offset="70"
+                 easing="easeInOutCubic">
+                Главная
+              </a>
+            </li>
+            <li>
+              <a class="header-links" scrollTo="how-works-block"
+                 duration="1400"
+                 offset="70"
+                 easing="easeInOutCubic">
+                Как это работает?</a>
+            </li>
+            <li>
+              <a class="header-links" scrollTo="why-choose-block"
+                 duration="3000"
+                 offset="70"
+                 easing="easeInOutCubic">
+                О нас</a>
+            </li>
+            <li>
+              <a class="header-links" routerLink="/blog-page" routerLinkActive="active">Блог</a>
+              <!--<a class="header-links" routerLink="/greeting-page" routerLinkActive="active">Блог</a>-->
+            </li>
+            <li>
+              <a class="header-links" routerLink="/faq-page" routerLinkActive="active">FAQ</a>
+            </li>
+            <li>
+              <a class="header-links" scrollTo="trust-us-block"
+                 duration="3000"
+                 offset="70"
+                 easing="easeInOutCubic">Контакты</a>
+            </li>
+          </ul>
+        </nav>
+        <div class="login-container">
+          <div class="sign-in">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              xmlns:xlink="http://www.w3.org/1999/xlink"
+              width="23px" height="23px">
+              <path fill-rule="evenodd" fill="rgb(87, 151, 227)"
+                    d="M23.000,11.500 C23.000,5.159 17.841,-0.000 11.500,-0.000 C5.159,-0.000 -0.000,5.159 -0.000,11.500 C-0.000,14.849 1.440,17.868 3.733,19.971 L3.722,19.981 L4.095,20.295 C4.119,20.316 4.145,20.333 4.170,20.353 C4.368,20.517 4.573,20.673 4.782,20.824 C4.850,20.873 4.918,20.922 4.987,20.970 C5.210,21.123 5.439,21.269 5.673,21.408 C5.724,21.438 5.776,21.467 5.827,21.497 C6.084,21.642 6.345,21.780 6.613,21.906 C6.633,21.915 6.653,21.924 6.673,21.933 C7.546,22.339 8.479,22.637 9.454,22.813 C9.480,22.818 9.505,22.822 9.531,22.827 C9.834,22.879 10.140,22.921 10.450,22.949 C10.487,22.952 10.525,22.955 10.563,22.958 C10.872,22.983 11.184,23.000 11.500,23.000 C11.813,23.000 12.122,22.983 12.429,22.959 C12.468,22.955 12.507,22.953 12.546,22.950 C12.853,22.922 13.157,22.882 13.457,22.830 C13.482,22.826 13.509,22.821 13.535,22.816 C14.495,22.644 15.415,22.352 16.277,21.956 C16.309,21.942 16.341,21.928 16.373,21.913 C16.631,21.792 16.883,21.661 17.130,21.521 C17.191,21.487 17.252,21.452 17.314,21.416 C17.538,21.283 17.760,21.145 17.975,20.997 C18.052,20.945 18.128,20.889 18.204,20.834 C18.388,20.702 18.568,20.566 18.743,20.423 C18.782,20.392 18.824,20.364 18.862,20.332 L19.245,20.013 L19.233,20.003 C21.546,17.899 23.000,14.866 23.000,11.500 ZM0.836,11.500 C0.836,5.620 5.620,0.836 11.500,0.836 C17.380,0.836 22.164,5.620 22.164,11.500 C22.164,14.669 20.773,17.517 18.572,19.472 C18.449,19.387 18.325,19.310 18.198,19.247 L14.658,17.477 C14.340,17.318 14.142,16.998 14.142,16.644 L14.142,15.407 C14.224,15.306 14.311,15.191 14.400,15.065 C14.859,14.418 15.226,13.698 15.494,12.923 C16.024,12.671 16.366,12.143 16.366,11.548 L16.366,10.065 C16.366,9.702 16.233,9.351 15.995,9.075 L15.995,7.123 C16.017,6.905 16.094,5.681 15.208,4.670 C14.437,3.791 13.190,3.345 11.500,3.345 C9.810,3.345 8.563,3.791 7.792,4.670 C6.906,5.680 6.983,6.905 7.004,7.122 L7.004,9.074 C6.767,9.350 6.634,9.702 6.634,10.065 L6.634,11.547 C6.634,12.007 6.840,12.437 7.194,12.727 C7.533,14.054 8.230,15.058 8.487,15.399 L8.487,16.609 C8.487,16.950 8.301,17.264 8.001,17.427 L4.695,19.231 C4.589,19.288 4.485,19.355 4.380,19.430 C2.206,17.476 0.836,14.645 0.836,11.500 Z"/>
+            </svg>
+            <span class="sign-in-label" (click)="openModal(signin)">Войти</span>
+          </div>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            xmlns:xlink="http://www.w3.org/1999/xlink"
+            width="2.5px" height="36.5px">
+            <path fill-rule="evenodd" stroke="rgb(203, 203, 203)" stroke-width="1px" stroke-linecap="butt"
+                  stroke-linejoin="miter" fill="none"
+                  d="M1.500,0.500 L1.500,35.500 "/>
+          </svg>
+          <div class="sign-up">
+            <a class="sign-in-button" (click)="openModal(signup)">Регистрация</a>
+          </div>
+        </div>
+      </div>
+    </header>
+    <section smoothScroll class="open-page" id="home">
+      <div class="tagline-container">
+            <span class="tagline-big-label">
+               Бесплатный сервис по проверке сетевого трафика
+            </span>
+        <span class="tagline-small-label">
+               Предотвратите скликивание рекламы и посещения вашего ресурса ботами
+            </span>
+        <div class="section-container-button">
+          <a class="quick-start-label">Добавьте свой сайт</a>
+        </div>
+      </div>
+    </section>
+    <section smoothScroll class="how-works-block" id="how-works-block">
+      <div class="section-container">
+        <span class="section-container-label">Как это работает?</span>
+        <div class="row">
+          <div class="info-block">
+            <img src="../../assets/images/logos/contribute-settings.png" alt="image description">
+            <p class="info-block-label">Подключите сайт к системе</p>
+            <!--<svg-->
+            <!--xmlns="http://www.w3.org/2000/svg"-->
+            <!--xmlns:xlink="http://www.w3.org/1999/xlink"-->
+            <!--width="66.5px" height="2.5px">-->
+            <!--<path fill-rule="evenodd" stroke="rgb(87, 151, 227)" stroke-width="1px"-->
+            <!--stroke-linecap="butt" stroke-linejoin="miter" fill="rgb(255, 255, 255)"-->
+            <!--d="M0.500,0.500 L65.500,0.500 "/>-->
+            <!--</svg>-->
+            <svg width="100%" height="1px">
+              <line x1="40%" y1="0" x2="60%" y2="0" stroke="#1198e6" stroke-width="1px"/>
+            </svg>
+            <p class="info-block-text">Регистрация займет не более 1 минуты, вам всегда будет доступна бесплатная версия
+              программы
+            </p>
+          </div>
+          <div class="info-block">
+            <img src="../../assets/images/logos/board-analysis.png">
+            <p class="info-block-label">Начнется автоматический анализ
+            </p>
+            <!--<svg-->
+            <!--xmlns="http://www.w3.org/2000/svg"-->
+            <!--xmlns:xlink="http://www.w3.org/1999/xlink"-->
+            <!--width="66.5px" height="2.5px">-->
+            <!--<path fill-rule="evenodd" stroke="rgb(87, 151, 227)" stroke-width="1px"-->
+            <!--stroke-linecap="butt" stroke-linejoin="miter" fill="rgb(255, 255, 255)"-->
+            <!--d="M0.500,0.500 L65.500,0.500 "/>-->
+            <!--</svg>-->
+            <svg width="100%" height="1px">
+              <line x1="40%" y1="0" x2="60%" y2="0" stroke="#1198e6" stroke-width="1px"/>
+            </svg>
+            <p class="info-block-text">Антибот изучит всевозможные риски посещения вашего сайта ботами
+            </p>
+          </div>
+          <div class="info-block">
+            <img src="../../assets/images/logos/communication-global.png">
+            <p class="info-block-label">Получайте результаты отчетности
+            </p>
+            <!--<svg-->
+            <!--xmlns="http://www.w3.org/2000/svg"-->
+            <!--xmlns:xlink="http://www.w3.org/1999/xlink"-->
+            <!--width="66.5px" height="2.5px">-->
+            <!--<path fill-rule="evenodd" stroke="rgb(87, 151, 227)" stroke-width="1px"-->
+            <!--stroke-linecap="butt" stroke-linejoin="miter" fill="rgb(255, 255, 255)"-->
+            <!--d="M0.500,0.500 L65.500,0.500 "/>-->
+            <!--</svg>-->
+            <svg width="100%" height="1px">
+              <line x1="40%" y1="0" x2="60%" y2="0" stroke="#1198e6" stroke-width="1px"/>
+            </svg>
+            <p class="info-block-text">Удобная и понятная визуализация данных, поможет принять решение и заблокировать
+              недействительные визиты на сайт</p>
+          </div>
+        </div>
+      </div>
+      <div class="section-container-button">
+        <a href="#" class="label">Подключите сайт к системе</a>
+      </div>
+    </section>
+    <section class="save-budget-block">
+      <div class="section-container">
+        <span class="section-container-label">Сохраните свой бюджет</span>
+        <div class="calculator-container">
+          <div class="scale-container">
+            <div class="range-container">
+              <span class="range-label">Ваши расходы на Adwords<strong>(EUR)</strong></span>
+              <div class="range-line">
+                <input #range class="range" type="range" value="0" max="100"/>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  xmlns:xlink="http://www.w3.org/1999/xlink"
+                  width="66px" height="30px">
+                  <path fill-rule="evenodd" fill="rgb(53, 64, 80)"
+                        d="M64.000,30.000 L11.000,30.000 C9.895,30.000 9.000,29.105 9.000,28.000 L9.000,21.428 L-0.000,15.000 L9.000,9.214 L9.000,2.000 C9.000,0.895 9.895,-0.000 11.000,-0.000 L64.000,-0.000 C65.105,-0.000 66.000,0.895 66.000,2.000 L66.000,28.000 C66.000,29.105 65.105,30.000 64.000,30.000 Z"/>
+                  <text class="range-sum" id="0" x="25" y="20" fill="#ffffff">0</text>
+                </svg>
+              </div>
+            </div>
+            <div class="range-container">
+              <span class="range-label">Ваши расходы в тизерных сетях<strong>(EUR)</strong></span>
+              <div class="range-line">
+                <input #range class="range" type="range" value="0" max="100"/>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  xmlns:xlink="http://www.w3.org/1999/xlink"
+                  width="66px" height="30px">
+                  <path fill-rule="evenodd" fill="rgb(53, 64, 80)"
+                        d="M64.000,30.000 L11.000,30.000 C9.895,30.000 9.000,29.105 9.000,28.000 L9.000,21.428 L-0.000,15.000 L9.000,9.214 L9.000,2.000 C9.000,0.895 9.895,-0.000 11.000,-0.000 L64.000,-0.000 C65.105,-0.000 66.000,0.895 66.000,2.000 L66.000,28.000 C66.000,29.105 65.105,30.000 64.000,30.000 Z"/>
+                  <text class="range-sum" id="1" x="25" y="20" fill="#ffffff">0</text>
+                </svg>
+              </div>
+            </div>
+            <div class="range-container">
+              <span class="range-label">Ваши расходы на ресламу<strong>(EUR)</strong></span>
+              <div class="range-line">
+                <input #range class="range" type="range" value="0" max="100"/>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  xmlns:xlink="http://www.w3.org/1999/xlink"
+                  width="66px" height="30px">
+                  <path fill-rule="evenodd" fill="rgb(53, 64, 80)"
+                        d="M64.000,30.000 L11.000,30.000 C9.895,30.000 9.000,29.105 9.000,28.000 L9.000,21.428 L-0.000,15.000 L9.000,9.214 L9.000,2.000 C9.000,0.895 9.895,-0.000 11.000,-0.000 L64.000,-0.000 C65.105,-0.000 66.000,0.895 66.000,2.000 L66.000,28.000 C66.000,29.105 65.105,30.000 64.000,30.000 Z"/>
+                  <text class="range-sum" id="2" x="25" y="20" fill="#ffffff">0</text>
+                </svg>
+              </div>
+            </div>
+          </div>
+          <div class="result-container">
+            <span class="result-container-head-label">Вы экономите</span>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              xmlns:xlink="http://www.w3.org/1999/xlink"
+              width="119.5px" height="2.5px">
+              <path fill-rule="evenodd" stroke="rgb(255, 255, 255)" stroke-width="1px" stroke-linecap="butt"
+                    stroke-linejoin="miter" fill="none"
+                    d="M0.500,0.500 L118.500,0.500 "/>
+            </svg>
+            <span id="result-label">0 EUR</span>
+            <div class="result-button-container">
+              <a href="#" class="result-button">Начать работать с нами</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section smoothScroll class="why-choose-block" id="why-choose-block">
+      <div class="section-container">
+        <span class="section-container-label">Почему выбирают Антибот?</span>
+        <div class="row">
+          <div class="info-block">
+            <img src="../../assets/images/logos/link-share-connect.png">
+            <p class="info-block-label">Удобство подключения и управления
+            </p>
+            <!--<svg-->
+            <!--xmlns="http://www.w3.org/2000/svg"-->
+            <!--xmlns:xlink="http://www.w3.org/1999/xlink"-->
+            <!--width="66.5px" height="2.5px">-->
+            <!--<path fill-rule="evenodd" stroke="rgb(87, 151, 227)" stroke-width="1px"-->
+            <!--stroke-linecap="butt" stroke-linejoin="miter" fill="rgb(255, 255, 255)"-->
+            <!--d="M0.500,0.499 L65.500,0.499 "/>-->
+            <!--</svg>-->
+            <svg width="100%" height="1px">
+              <line x1="40%" y1="0" x2="60%" y2="0" stroke="#1198e6" stroke-width="1px"/>
+            </svg>
+            <p>С нами не нужно изучать сложные инструкции или программировать самостоятельно. В этом смысле, Антибот не
+              имеет аналогов в России
+            </p>
+          </div>
+          <svg width="1px">
+            <line x1="0" y1="0" x2="0" y2="100%" stroke="#1198e6" stroke-width="1px"/>
+          </svg>
+          <div class="info-block">
+            <img src="../../assets/images/logos/monitoring-evaluation.png">
+            <p class="info-block-label">Анализ трафика из поисковых систем</p>
+            <!--<svg-->
+            <!--xmlns="http://www.w3.org/2000/svg"-->
+            <!--xmlns:xlink="http://www.w3.org/1999/xlink"-->
+            <!--width="66.5px" height="2.5px">-->
+            <!--<path fill-rule="evenodd" stroke="rgb(87, 151, 227)" stroke-width="1px"-->
+            <!--stroke-linecap="butt" stroke-linejoin="miter" fill="rgb(255, 255, 255)"-->
+            <!--d="M0.500,0.499 L65.500,0.499 "/>-->
+            <!--</svg>-->
+            <svg width="100%" height="1px">
+              <line x1="40%" y1="0" x2="60%" y2="0" stroke="#1198e6" stroke-width="1px"/>
+            </svg>
+            <p>Сервис изучает не только трафик из рекламных, партнерских и тизерных сетей, но и визиты из поисковиков
+              Google и Bing
+            </p>
+          </div>
+          <svg width="1px">
+            <line x1="0" y1="0" x2="0" y2="100%" stroke="#1198e6" stroke-width="1px"/>
+          </svg>
+          <div class="info-block">
+            <img src="../../assets/images/logos/document-business.png">
+            <p class="info-block-label">Подробные результаты мониторинга
+            </p>
+            <!--<svg-->
+            <!--xmlns="http://www.w3.org/2000/svg"-->
+            <!--xmlns:xlink="http://www.w3.org/1999/xlink"-->
+            <!--width="66.5px" height="2.5px">-->
+            <!--<path fill-rule="evenodd" stroke="rgb(87, 151, 227)" stroke-width="1px"-->
+            <!--stroke-linecap="butt" stroke-linejoin="miter" fill="rgb(255, 255, 255)"-->
+            <!--d="M0.500,0.499 L65.500,0.499 "/>-->
+            <!--</svg>-->
+            <svg width="100%" height="1px">
+              <line x1="40%" y1="0" x2="60%" y2="0" stroke="#1198e6" stroke-width="1px"/>
+            </svg>
+            <p>У нас нет сложных графиков, лишней информации и навязчивых рекомендаций
+            </p>
+          </div>
+        </div>
+        <!--<svg-->
+        <!--xmlns="http://www.w3.org/2000/svg"-->
+        <!--xmlns:xlink="http://www.w3.org/1999/xlink"-->
+        <!--width="1111.5px" height="2.5px">-->
+        <!--<path fill-rule="evenodd" stroke="rgb(87, 151, 227)" stroke-width="1px" stroke-linecap="butt"-->
+        <!--stroke-linejoin="miter" opacity="0.22" fill="rgb(255, 255, 255)"-->
+        <!--d="M0.500,0.500 L1110.500,0.500 "/>-->
+        <!--</svg>-->
+        <svg width="100%" height="1px">
+          <line x1="0%" y1="0" x2="100%" y2="0" stroke="#1198e6" stroke-width="1px"/>
+        </svg>
+        <div class="row">
+          <div class="info-block">
+            <img src="../../assets/images/logos/advertising.png">
+            <p class="info-block-label">Автоматическое обнаружение ботов
+            </p>
+            <svg width="100%" height="1px">
+              <line x1="40%" y1="0" x2="60%" y2="0" stroke="#1198e6" stroke-width="1px"/>
+            </svg>
+            <p>Уникальная технология распознавания ботов по зараженным IP и Proxy (бот-сетям)
+            </p>
+          </div>
+          <svg width="1px">
+            <line x1="0" y1="0" x2="0" y2="100%" stroke="#1198e6" stroke-width="1px"/>
+          </svg>
+          <div class="info-block">
+            <img src="../../assets/images/logos/web-application.png">
+            <p class="info-block-label">Широкий анализ поведенческих факторов
+            </p>
+            <svg width="100%" height="1px">
+              <line x1="40%" y1="0" x2="60%" y2="0" stroke="#1198e6" stroke-width="1px"/>
+            </svg>
+            <p>В нашей базе собраны и настроены все возможные вариации поведения пользователей, мы непрерывно следим за
+              её усовершенствованием
+            </p>
+          </div>
+          <svg width="1px">
+            <line x1="0" y1="0" x2="0" y2="100%" stroke="#1198e6" stroke-width="1px"/>
+          </svg>
+          <div class="info-block">
+            <img src="../../assets/images/logos/like.png">
+            <p class="info-block-label">Экономия денежных средств
+            </p>
+            <svg width="100%" height="1px">
+              <line x1="40%" y1="0" x2="60%" y2="0" stroke="#1198e6" stroke-width="1px"/>
+            </svg>
+            <p>Пользуйтесь Антибот совершенно бесплатно, или подключите платную версию и ставьте более высокие задачи в
+              бизнесе</p>
+          </div>
+        </div>
+        <div class="section-container-button">
+          <a href="#" class="label-blue">Попробуйте бесплатно</a>
+        </div>
+      </div>
+    </section>
+    <section smoothScroll class="trust-us-block" id="trust-us-block">
+      <span class="trust-us-block-label">Нам доверяют</span>
+      <ngx-carousel
+        [inputs]="carouselTile">
+        <ngx-tile NgxCarouselItem>
+          <h1 class="img-block"><img src="../../assets/images/logos/client-1.png"></h1>
+        </ngx-tile>
+        <ngx-tile NgxCarouselItem>
+          <h1 class="img-block"><img src="../../assets/images/logos/client-3.png"></h1>
+        </ngx-tile>
+        <ngx-tile NgxCarouselItem>
+          <h1 class="img-block"><img src="../../assets/images/logos/client-5.png"></h1>
+        </ngx-tile>
+        <ngx-tile NgxCarouselItem>
+          <h1 class="img-block"><img src="../../assets/images/logos/client-2.png"></h1>
+        </ngx-tile>
+        <ngx-tile NgxCarouselItem>
+          <h1 class="img-block"><img src="../../assets/images/logos/client-1.png"></h1>
+        </ngx-tile>
+        <ngx-tile NgxCarouselItem>
+          <h1 class="img-block"><img src="../../assets/images/logos/client-3.png"></h1>
+        </ngx-tile>
+        <ngx-tile NgxCarouselItem>
+          <h1 class="img-block"><img src="../../assets/images/logos/client-3.png"></h1>
+        </ngx-tile>
+        <ngx-tile NgxCarouselItem>
+          <h1 class="img-block"><img src="../../assets/images/logos/client-5.png"></h1>
+        </ngx-tile>
+        <ngx-tile NgxCarouselItem>
+          <h1 class="img-block"><img src="../../assets/images/logos/client-2.png"></h1>
+        </ngx-tile>
+        <ngx-tile NgxCarouselItem>
+          <h1 class="img-block"><img src="../../assets/images/logos/client-1.png"></h1>
+        </ngx-tile>
+        <a NgxCarouselPrev class='leftRs'></a>
+        <a NgxCarouselNext class='rightRs'></a>
+      </ngx-carousel>
+    </section>
+    <footer>
+      <div class="footer-container">
+        <div class="f-container-left-part">
+          <img src="../../assets/images/logos/logo.png">
+          <p>Антибот – ведущая система с автоматическим анализатором отчетности.<br>
+            Сервис станет вашим надежным помощником в борьбе с потоком нецелевого трафика на сайт.
+            Система предостерегает рекламодателей и бизнес-проекты от посещения ресурсов ботами, кликфрода, скликивания
+            рекламных средств, ошибочных оплат повторных кликов, не объективную оценку возможностей конкурента, накрутку
+            поведенческих факторов.<br>
+            С нами сотрудничают веб-мастера, рекламные и digital-агентства, малые и крупные e-commerce. Над работой
+            сервиса непрерывно трудятся наши лучшие разработчики и на данный момент, мы знаем о всех существующих
+            веб-опасностях на пути интернет-маркетинга и предпринимательства.<br>
+          </p>
+        </div>
+        <div class="f-container-right-part">
+          <div class="footer-nav-container">
+            <div class="container-block">
+              <ul class="footer-container-nav-ul">
+                <li>
+                  <a class="footer-links-label" scrollTo="home"
+                     duration="3000"
+                     offset="70"
+                     easing="easeInOutCubic">О нас</a>
+                </li>
+                <li>
+                  <a class="footer-links-label" href="#">Блог</a>
+                </li>
+                <li>
+                  <a class="footer-links-label" scrollTo="how-works-block"
+                     duration="1400"
+                     offset="70"
+                     easing="easeInOutCubic">F.A.Q</a>
+                </li>
+              </ul>
+            </div>
+            <div class="container-block">
+              <ul class="footer-container-nav-ul">
+                <li>
+                  <a class="footer-links-label" href="#">Контакты</a>
+                </li>
+                <li>
+                  <a class="footer-links-label" scrollTo="why-choose-block"
+                     duration="3000"
+                     offset="70"
+                     easing="easeInOutCubic">Преимущества</a>
+                </li>
+                <li>
+                  <a class="footer-links-label" href="#">Приватность</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            xmlns:xlink="http://www.w3.org/1999/xlink"
+            width="539px" height="1px">
+            <image opacity="0.302" x="0px" y="0px" width="539px" height="1px"
+                   xlink:href="data:img/png;base64,iVBORw0KGgoAAAANSUhEUgAAAhsAAAABCAQAAADd/KTiAAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAAAmJLR0QA/4ePzL8AAAAHdElNRQfhCwINCTetshYIAAAAFElEQVQ4y2P878swCkbBKBgFJAAAfnQBTgiSJC4AAAAASUVORK5CYII="/>
+          </svg>
+          <div class="footer-links">
+            <a><img src="../../assets/images/logos/facebook.png"></a>
+            <a><img src="../../assets/images/logos/linkid.png"></a>
+          </div>
+        </div>
+      </div>
+      <div class="copy-right-container">
+                <span class="copy-right-label"> @AntiBot 2017. click fraud detection,
+                    click fraud protection, click fraud prevention ,click fraud software.</span>
+      </div>
+    </footer>
+    <ng-template #signin>
+      <div class="modal-header">
+        <h4 class="modal-title pull-left">Sign in</h4>
+        <button type="button" class="close pull-right" aria-label="Close" (click)="modalRef.hide()">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+
+      <div class="modal-body">
+        <div class="modal-login">
+          <span>Login</span>
+          <input type="text" name="email" placeholder="Email" [(ngModel)]="address">
+        </div>
+        <div class="modal-password">
+          <span>Password</span>
+          <input type="password" name="password" placeholder="Password" [(ngModel)]="password">
+          <div [hidden]="openDanger(true)"
+               class="alert-danger">
+            Login failed. Your username and password don't correct
+          </div>
+        </div>
+      </div>
+      <div class="modal-answer">
+        <a class="modal-span-forgot" (click)="modalRef.hide();openModal(forgetpassword);">Forgot password?</a>
+        <a class="modal-button" (click)="login()">Login</a>
+      </div>
+    </ng-template>
+    <ng-template #signup>
+      <div class="modal-header">
+        <h4 class="modal-title pull-left">Sign up</h4>
+        <button type="button" class="close pull-right" aria-label="Close" (click)="modalRef.hide()">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div class="modal-login">
+          <span>Login</span>
+          <input type="text" name="email" placeholder="Email" [(ngModel)]="newAdress"/>
+        </div>
+        <div class="modal-password">
+          <span>Password</span>
+          <input type="password" name="password" placeholder="Password" [(ngModel)]="newPassword"/>
+        </div>
+        <div class="modal-password">
+          <span>Confirm your password</span>
+          <input type="password" name="password" placeholder="Password" [(ngModel)]="checkPassword"/>
+        </div>
+      </div>
+      <div class="modal-answer">
+        <img src="../../assets/images/logos/kapcha.png">
+        <a class="modal-button" (click)="registration();openModal(successRegistration);">Sign up</a>
+      </div>
+    </ng-template>
+    <ng-template #forgetpassword>
+      <div class="modal-header">
+        <h4 class="modal-title pull-left">Recover password</h4>
+        <button type="button" class="close pull-right" aria-label="Close" (click)="modalRef.hide()">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div class="modal-login">
+          <span>Enter available email</span>
+          <input type="text" name="email" placeholder="Email"/>
+        </div>
+      </div>
+      <div class="modal-answer">
+        <a href="#" class="modal-button">Recover password</a>
+      </div>
+    </ng-template>
+    <ng-template #successRegistration>
+      <div class="modal-body text-center">
+        <p>После создания аккаунта AntiBot на указанный вами при регистрации адрес электронной почты придет письмо со
+          ссылкой для подтверждения.
+          Чтобы подтвердить свой адрес, откройте ссылку из письма.
+          В противном случае вы не сможете получить доступ к некоторым продуктам и функциям AntiBot.</p>
+        <div class="modal-body-row">
+          <button type="button" class="btn btn-default" (click)="modalRef.hide()">Good</button>
+          <button type="button" class="btn btn-primary" (click)="send()">Send again</button>
+        </div>
+      </div>
+    </ng-template>
+  </div>
+</div>
+</body>
+<script src="../../js/jquery-2.1.4.min.js"></script>
+<script src="../../js/bootstrap.min.js"></script>
