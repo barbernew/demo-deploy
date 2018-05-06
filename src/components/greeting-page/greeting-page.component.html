@@ -25,7 +25,7 @@
                  duration="3000"
                  offset="70"
                  easing="easeInOutCubic">
-                Главная
+                Main
               </a>
             </li>
             <li>
@@ -33,17 +33,17 @@
                  duration="1400"
                  offset="70"
                  easing="easeInOutCubic">
-                Как это работает?</a>
+                Section</a>
             </li>
             <li>
               <a class="header-links" scrollTo="why-choose-block"
                  duration="3000"
                  offset="70"
                  easing="easeInOutCubic">
-                О нас</a>
+                About</a>
             </li>
             <li>
-              <a class="header-links" routerLink="/blog-page" routerLinkActive="active">Блог</a>
+              <a class="header-links" routerLink="/blog-page" routerLinkActive="active">Blog</a>
               <!--<a class="header-links" routerLink="/greeting-page" routerLinkActive="active">Блог</a>-->
             </li>
             <li>
@@ -53,7 +53,7 @@
               <a class="header-links" scrollTo="trust-us-block"
                  duration="3000"
                  offset="70"
-                 easing="easeInOutCubic">Контакты</a>
+                 easing="easeInOutCubic">Contact</a>
             </li>
           </ul>
         </nav>
@@ -66,7 +66,7 @@
               <path fill-rule="evenodd" fill="rgb(87, 151, 227)"
                     d="M23.000,11.500 C23.000,5.159 17.841,-0.000 11.500,-0.000 C5.159,-0.000 -0.000,5.159 -0.000,11.500 C-0.000,14.849 1.440,17.868 3.733,19.971 L3.722,19.981 L4.095,20.295 C4.119,20.316 4.145,20.333 4.170,20.353 C4.368,20.517 4.573,20.673 4.782,20.824 C4.850,20.873 4.918,20.922 4.987,20.970 C5.210,21.123 5.439,21.269 5.673,21.408 C5.724,21.438 5.776,21.467 5.827,21.497 C6.084,21.642 6.345,21.780 6.613,21.906 C6.633,21.915 6.653,21.924 6.673,21.933 C7.546,22.339 8.479,22.637 9.454,22.813 C9.480,22.818 9.505,22.822 9.531,22.827 C9.834,22.879 10.140,22.921 10.450,22.949 C10.487,22.952 10.525,22.955 10.563,22.958 C10.872,22.983 11.184,23.000 11.500,23.000 C11.813,23.000 12.122,22.983 12.429,22.959 C12.468,22.955 12.507,22.953 12.546,22.950 C12.853,22.922 13.157,22.882 13.457,22.830 C13.482,22.826 13.509,22.821 13.535,22.816 C14.495,22.644 15.415,22.352 16.277,21.956 C16.309,21.942 16.341,21.928 16.373,21.913 C16.631,21.792 16.883,21.661 17.130,21.521 C17.191,21.487 17.252,21.452 17.314,21.416 C17.538,21.283 17.760,21.145 17.975,20.997 C18.052,20.945 18.128,20.889 18.204,20.834 C18.388,20.702 18.568,20.566 18.743,20.423 C18.782,20.392 18.824,20.364 18.862,20.332 L19.245,20.013 L19.233,20.003 C21.546,17.899 23.000,14.866 23.000,11.500 ZM0.836,11.500 C0.836,5.620 5.620,0.836 11.500,0.836 C17.380,0.836 22.164,5.620 22.164,11.500 C22.164,14.669 20.773,17.517 18.572,19.472 C18.449,19.387 18.325,19.310 18.198,19.247 L14.658,17.477 C14.340,17.318 14.142,16.998 14.142,16.644 L14.142,15.407 C14.224,15.306 14.311,15.191 14.400,15.065 C14.859,14.418 15.226,13.698 15.494,12.923 C16.024,12.671 16.366,12.143 16.366,11.548 L16.366,10.065 C16.366,9.702 16.233,9.351 15.995,9.075 L15.995,7.123 C16.017,6.905 16.094,5.681 15.208,4.670 C14.437,3.791 13.190,3.345 11.500,3.345 C9.810,3.345 8.563,3.791 7.792,4.670 C6.906,5.680 6.983,6.905 7.004,7.122 L7.004,9.074 C6.767,9.350 6.634,9.702 6.634,10.065 L6.634,11.547 C6.634,12.007 6.840,12.437 7.194,12.727 C7.533,14.054 8.230,15.058 8.487,15.399 L8.487,16.609 C8.487,16.950 8.301,17.264 8.001,17.427 L4.695,19.231 C4.589,19.288 4.485,19.355 4.380,19.430 C2.206,17.476 0.836,14.645 0.836,11.500 Z"/>
             </svg>
-            <span class="sign-in-label" (click)="openModal(signin)">Войти</span>
+            <span class="sign-in-label" (click)="openModal(signin)">Sign in</span>
           </div>
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -77,7 +77,7 @@
                   d="M1.500,0.500 L1.500,35.500 "/>
           </svg>
           <div class="sign-up">
-            <a class="sign-in-button" (click)="openModal(signup)">Регистрация</a>
+            <a class="sign-in-button" (click)="openModal(signup)">Registration</a>
           </div>
         </div>
       </div>
@@ -85,23 +85,23 @@
     <section smoothScroll class="open-page" id="home">
       <div class="tagline-container">
             <span class="tagline-big-label">
-               Бесплатный сервис по проверке сетевого трафика
+                Fanny at wrong table ye in
             </span>
         <span class="tagline-small-label">
-               Предотвратите скликивание рекламы и посещения вашего ресурса ботами
+               Be on easily cannot innate in lasted months on
             </span>
         <div class="section-container-button">
-          <a class="quick-start-label">Добавьте свой сайт</a>
+          <a class="quick-start-label">Add your merge</a>
         </div>
       </div>
     </section>
     <section smoothScroll class="how-works-block" id="how-works-block">
       <div class="section-container">
-        <span class="section-container-label">Как это работает?</span>
+        <span class="section-container-label">Old there any widow law rooms</span>
         <div class="row">
           <div class="info-block">
             <img src="../../assets/images/logos/contribute-settings.png" alt="image description">
-            <p class="info-block-label">Подключите сайт к системе</p>
+            <p class="info-block-label">At bringing or he sensible pleasure.</p>
             <!--<svg-->
             <!--xmlns="http://www.w3.org/2000/svg"-->
             <!--xmlns:xlink="http://www.w3.org/1999/xlink"-->
@@ -113,13 +113,13 @@
             <svg width="100%" height="1px">
               <line x1="40%" y1="0" x2="60%" y2="0" stroke="#1198e6" stroke-width="1px"/>
             </svg>
-            <p class="info-block-text">Регистрация займет не более 1 минуты, вам всегда будет доступна бесплатная версия
-              программы
+            <p class="info-block-text">Be at miss or each good play home they. It leave taste mr in it fancy.
+
             </p>
           </div>
           <div class="info-block">
             <img src="../../assets/images/logos/board-analysis.png">
-            <p class="info-block-label">Начнется автоматический анализ
+            <p class="info-block-label"> She son lose does fond bred gave lady get
             </p>
             <!--<svg-->
             <!--xmlns="http://www.w3.org/2000/svg"-->
@@ -132,12 +132,12 @@
             <svg width="100%" height="1px">
               <line x1="40%" y1="0" x2="60%" y2="0" stroke="#1198e6" stroke-width="1px"/>
             </svg>
-            <p class="info-block-text">jopa.net изучит всевозможные риски посещения вашего сайта ботами
+            <p class="info-block-text">Sister depend change off piqued one.
             </p>
           </div>
           <div class="info-block">
             <img src="../../assets/images/logos/communication-global.png">
-            <p class="info-block-label">Получайте результаты отчетности
+            <p class="info-block-label">Use correct day new brought tedious.
             </p>
             <!--<svg-->
             <!--xmlns="http://www.w3.org/2000/svg"-->
@@ -150,22 +150,21 @@
             <svg width="100%" height="1px">
               <line x1="40%" y1="0" x2="60%" y2="0" stroke="#1198e6" stroke-width="1px"/>
             </svg>
-            <p class="info-block-text">Удобная и понятная визуализация данных, поможет принять решение и заблокировать
-              недействительные визиты на сайт</p>
+            <p class="info-block-text">Contented continued any happiness instantly objection yet her allowance.</p>
           </div>
         </div>
       </div>
       <div class="section-container-button">
-        <a href="#" class="label">Подключите сайт к системе</a>
+        <a href="#" class="label">Use correct day new brought tedious.</a>
       </div>
     </section>
     <section class="save-budget-block">
       <div class="section-container">
-        <span class="section-container-label">Сохраните свой бюджет</span>
+        <span class="section-container-label">Much evil soon high in hope do view. </span>
         <div class="calculator-container">
           <div class="scale-container">
             <div class="range-container">
-              <span class="range-label">Ваши расходы на Adwords<strong>(EUR)</strong></span>
+              <span class="range-label">Consider speaking me prospect <strong>(EUR)</strong></span>
               <div class="range-line">
                 <input #range class="range" type="range" value="0" max="100"/>
                 <svg
@@ -179,7 +178,7 @@
               </div>
             </div>
             <div class="range-container">
-              <span class="range-label">Ваши расходы в тизерных сетях<strong>(EUR)</strong></span>
+              <span class="range-label">Do part am he high rest that<strong>(EUR)</strong></span>
               <div class="range-line">
                 <input #range class="range" type="range" value="0" max="100"/>
                 <svg
@@ -193,7 +192,7 @@
               </div>
             </div>
             <div class="range-container">
-              <span class="range-label">Ваши расходы на ресламу<strong>(EUR)</strong></span>
+              <span class="range-label">Ten the hastened<strong>(EUR)</strong></span>
               <div class="range-line">
                 <input #range class="range" type="range" value="0" max="100"/>
                 <svg
@@ -208,7 +207,7 @@
             </div>
           </div>
           <div class="result-container">
-            <span class="result-container-head-label">Вы экономите</span>
+            <span class="result-container-head-label">Elinor of denote</span>
             <svg
               xmlns="http://www.w3.org/2000/svg"
               xmlns:xlink="http://www.w3.org/1999/xlink"
@@ -219,7 +218,7 @@
             </svg>
             <span id="result-label">0 EUR</span>
             <div class="result-button-container">
-              <a href="#" class="result-button">Начать работать с нами</a>
+              <a href="#" class="result-button">High rest that</a>
             </div>
           </div>
         </div>
@@ -231,7 +230,7 @@
         <div class="row">
           <div class="info-block">
             <img src="../../assets/images/logos/link-share-connect.png">
-            <p class="info-block-label">Удобство подключения и управления
+            <p class="info-block-label">Agreed but expect repair
             </p>
             <!--<svg-->
             <!--xmlns="http://www.w3.org/2000/svg"-->
@@ -244,8 +243,8 @@
             <svg width="100%" height="1px">
               <line x1="40%" y1="0" x2="60%" y2="0" stroke="#1198e6" stroke-width="1px"/>
             </svg>
-            <p>С нами не нужно изучать сложные инструкции или программировать самостоятельно. В этом смысле, jopa.net не
-              имеет аналогов в России
+            <p>Stronger unpacked felicity to of mistaken.
+              Fanny at wrong table ye in. Be on easily cannot innate in lasted months on. Differed and and felicity
             </p>
           </div>
           <svg width="1px">
@@ -253,7 +252,7 @@
           </svg>
           <div class="info-block">
             <img src="../../assets/images/logos/monitoring-evaluation.png">
-            <p class="info-block-label">Анализ трафика из поисковых систем</p>
+            <p class="info-block-label">Cause dried no solid no an small so still widen</p>
             <!--<svg-->
             <!--xmlns="http://www.w3.org/2000/svg"-->
             <!--xmlns:xlink="http://www.w3.org/1999/xlink"-->
@@ -265,8 +264,7 @@
             <svg width="100%" height="1px">
               <line x1="40%" y1="0" x2="60%" y2="0" stroke="#1198e6" stroke-width="1px"/>
             </svg>
-            <p>Сервис изучает не только трафик из рекламных, партнерских и тизерных сетей, но и визиты из поисковиков
-              Google и Bing
+            <p>Ten weather evident smiling bed against she examine its. Rendered far opinions two yet moderate sex striking.
             </p>
           </div>
           <svg width="1px">
@@ -274,7 +272,7 @@
           </svg>
           <div class="info-block">
             <img src="../../assets/images/logos/document-business.png">
-            <p class="info-block-label">Подробные результаты мониторинга
+            <p class="info-block-label">Sufficient motionless compliment
             </p>
             <!--<svg-->
             <!--xmlns="http://www.w3.org/2000/svg"-->
@@ -287,7 +285,8 @@
             <svg width="100%" height="1px">
               <line x1="40%" y1="0" x2="60%" y2="0" stroke="#1198e6" stroke-width="1px"/>
             </svg>
-            <p>У нас нет сложных графиков, лишней информации и навязчивых рекомендаций
+            <p>Are man she towards private weather pleased.
+              In more part he lose need so want rank no. At bringing or he sensible pleasure.
             </p>
           </div>
         </div>
@@ -305,12 +304,12 @@
         <div class="row">
           <div class="info-block">
             <img src="../../assets/images/logos/advertising.png">
-            <p class="info-block-label">Автоматическое обнаружение ботов
+            <p class="info-block-label">Inhabiting discretion
             </p>
             <svg width="100%" height="1px">
               <line x1="40%" y1="0" x2="60%" y2="0" stroke="#1198e6" stroke-width="1px"/>
             </svg>
-            <p>Уникальная технология распознавания ботов по зараженным IP и Proxy (бот-сетям)
+            <p>Inhabiting discretion the her dispatched decisively boisterous joy
             </p>
           </div>
           <svg width="1px">
@@ -318,13 +317,12 @@
           </svg>
           <div class="info-block">
             <img src="../../assets/images/logos/web-application.png">
-            <p class="info-block-label">Широкий анализ поведенческих факторов
+            <p class="info-block-label">Waiting express
             </p>
             <svg width="100%" height="1px">
               <line x1="40%" y1="0" x2="60%" y2="0" stroke="#1198e6" stroke-width="1px"/>
             </svg>
-            <p>В нашей базе собраны и настроены все возможные вариации поведения пользователей, мы непрерывно следим за
-              её усовершенствованием
+            <p>So form were wish open is able of mile of. Waiting express if prevent it we an musical.
             </p>
           </div>
           <svg width="1px">
@@ -332,22 +330,22 @@
           </svg>
           <div class="info-block">
             <img src="../../assets/images/logos/like.png">
-            <p class="info-block-label">Экономия денежных средств
+            <p class="info-block-label">Especially reasonable travelling she son
             </p>
             <svg width="100%" height="1px">
               <line x1="40%" y1="0" x2="60%" y2="0" stroke="#1198e6" stroke-width="1px"/>
             </svg>
-            <p>Пользуйтесь jopa.net совершенно бесплатно, или подключите платную версию и ставьте более высокие задачи в
-              бизнесе</p>
+            <p>Resources resembled forfeited no to zealously.
+              Has procured daughter how friendly followed repeated who surprise. Great asked oh under on voice downs.</p>
           </div>
         </div>
         <div class="section-container-button">
-          <a href="#" class="label-blue">Попробуйте бесплатно</a>
+          <a href="#" class="label-blue">Try free</a>
         </div>
       </div>
     </section>
     <section smoothScroll class="trust-us-block" id="trust-us-block">
-      <span class="trust-us-block-label">Нам доверяют</span>
+      <span class="trust-us-block-label">Trust us</span>
       <!--<ngx-carousel-->
         <!--[inputs]="carouselTile">-->
         <!--<ngx-tile NgxCarouselItem>-->
@@ -388,14 +386,16 @@
       <div class="footer-container">
         <div class="f-container-left-part">
           <img src="../../assets/images/logos/client-1.png">
-          <p>jopa.net – ведущая система с автоматическим анализатором отчетности.<br>
-            Сервис станет вашим надежным помощником в борьбе с потоком нецелевого трафика на сайт.
-            Система предостерегает рекламодателей и бизнес-проекты от посещения ресурсов ботами, кликфрода, скликивания
-            рекламных средств, ошибочных оплат повторных кликов, не объективную оценку возможностей конкурента, накрутку
-            поведенческих факторов.<br>
-            С нами сотрудничают веб-мастера, рекламные и digital-агентства, малые и крупные e-commerce. Над работой
-            сервиса непрерывно трудятся наши лучшие разработчики и на данный момент, мы знаем о всех существующих
-            веб-опасностях на пути интернет-маркетинга и предпринимательства.<br>
+          <p>Discourse otherwise disposing as it of strangers forfeited deficient.<br>
+            Cause dried no solid no an small so still widen. Ten weather evident smiling bed against she examine its.
+            Rendered far opinions two yet moderate sex striking. Sufficient motionless compliment by stimulated assistance at.
+            Convinced resolving extensive agreeable in it on as remainder. Cordially say affection met who propriety him.
+            Are man she towards private weather pleased. In more part he lose need so want rank no.
+            At bringing or he sensible pleasure. Prevent he parlors do waiting be females an message society. <br>
+            Stronger unpacked felicity to of mistaken. Fanny at wrong table ye in.
+            Be on easily cannot innate in lasted months on. Differed and and felicity steepest mrs age outweigh.
+            Opinions learning likewise daughter now age outweigh. Raptures stanhill my greatest mistaken or exercise he on although.
+            Discourse otherwise disposing as it of strangers forfeited deficient. <br>
           </p>
         </div>
         <div class="f-container-right-part">
@@ -406,10 +406,10 @@
                   <a class="footer-links-label" scrollTo="home"
                      duration="3000"
                      offset="70"
-                     easing="easeInOutCubic">О нас</a>
+                     easing="easeInOutCubic">About</a>
                 </li>
                 <li>
-                  <a class="footer-links-label" href="#">Блог</a>
+                  <a class="footer-links-label" href="#">Blog</a>
                 </li>
                 <li>
                   <a class="footer-links-label" scrollTo="how-works-block"
@@ -422,16 +422,16 @@
             <div class="container-block">
               <ul class="footer-container-nav-ul">
                 <li>
-                  <a class="footer-links-label" href="#">Контакты</a>
+                  <a class="footer-links-label" href="#">Contact</a>
                 </li>
                 <li>
                   <a class="footer-links-label" scrollTo="why-choose-block"
                      duration="3000"
                      offset="70"
-                     easing="easeInOutCubic">Преимущества</a>
+                     easing="easeInOutCubic">Benifits</a>
                 </li>
                 <li>
-                  <a class="footer-links-label" href="#">Приватность</a>
+                  <a class="footer-links-label" href="#">Private</a>
                 </li>
               </ul>
             </div>
@@ -450,8 +450,7 @@
         </div>
       </div>
       <div class="copy-right-container">
-                <span class="copy-right-label"> @jopa.net 2017. click fraud detection,
-                    click fraud protection, click fraud prevention ,click fraud software.</span>
+                <span class="copy-right-label"> @jopa.net 2017. Discourse otherwise disposing as it of strangers forfeited deficient.</span>
       </div>
     </footer>
     <ng-template #signin>
